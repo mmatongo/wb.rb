@@ -40,3 +40,5 @@ def self.help
 end
 
 def self.sh
+    FileUtils.mkdir_p 'test'
+end
