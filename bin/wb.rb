@@ -18,9 +18,9 @@ class WB
                 WB.help
             when "c"
                 WB.c
-            when "go"
-                WB.golang
-            when "sh"
+            when "go" || when "golang" # not sure if ruby supports this, I'll leave it
+                WB.golang              # in until I can properly test it,
+            when "sh" || when "shell"  # probably isn't supported.
                 WB.sh
             when "rust"
                 WB.rust
@@ -38,3 +38,5 @@ def self.help
     print "go - Init golang project."
     print "c" - "Init rust project."
 end
+
+def self.sh
