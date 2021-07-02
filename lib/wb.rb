@@ -25,7 +25,9 @@ class WB
         WB.golang
       when 'sh'
         WB.sh
-      when 'rust'
+      when 'ruby'
+        WB.rb
+      when 'rs'
         WB.rust
       else
         puts "\n Invalid command, type ':h' to see available commands."
@@ -43,7 +45,9 @@ class WB
     puts "':q'  - Quit the application."
     puts "'go'  - Init golang project."
     puts "'c '  - Init rust project."
-    puts "'sh'  - Init a shell script. "
+    puts "'sh'  - Init a shell project."
+    puts "'rb'  - Init a ruby project."
+    puts "'rs'  - Init a rust project."
   end
 
   def self.c
