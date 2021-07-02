@@ -2,6 +2,7 @@
 
 # class manages workspace builder
 class WB
+  # I keep getting an error that this method is too long
   def self.run
     loop do
       # get user input for what they want to init
