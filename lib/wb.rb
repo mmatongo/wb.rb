@@ -1,5 +1,5 @@
 class WB
-
+    self.motd
     def self.run
         while true
             # get user input for what they want to init
@@ -30,14 +30,19 @@ class WB
         end
     end
     def self.help
-        puts "Help"
-        puts "':h' - This help menu."
-        puts "':q' - Quit the application."
-        puts "'go' - Init golang project."
-        puts "'c' - Init rust project."
-        puts "'sh' - Init a shell script. "
+        puts "        Help"
+        puts "':h'  - This help menu."
+        puts "':q'  - Quit the application."
+        puts "'go'  - Init golang project."
+        puts "'c '  - Init rust project."
+        puts "'sh'  - Init a shell script. "
     end
-    def self.sh
-        FileUtils.mkdir_p 'test'
+    def self.c
+        FileUtils.mkdir_p ''
+        FileUtils.mkdir_p '$/src'
+        File.open("Project1/src/main.c", "w") do |x|     
+            x.write("#include <stdio.h>\n")
+            x.write("#include <stdlib.h>\n")     
+          end
     end
 end
