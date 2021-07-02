@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# class manages workspace builder
 class WB
   def self.run
     loop do
@@ -50,11 +51,11 @@ class WB
     # temporal scaffolding
     prompt = '> '
     print prompt.to_s
-    projectName = gets.chomp.to_s
+    project_name = gets.chomp.to_s
 
-    FileUtils.mkdir_p projectName.to_s
-    FileUtils.mkdir_p "#{projectName}/src"
-    File.open("#{projectName}/src/main.c", 'w') do |x|
+    FileUtils.mkdir_p project_name.to_s
+    FileUtils.mkdir_p "#{project_name}/src"
+    File.open("#{project_name}/src/main.c", 'w') do |x|
       x.write("#include <stdio.h>\n")
       x.write("#include <stdlib.h>\n")
     end
