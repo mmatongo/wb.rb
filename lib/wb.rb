@@ -7,7 +7,7 @@ class WB
 
             puts "\nType ':q' to quit and ':h' for help"
             print "#{prompt}"
-            input, projectName = ARGV  #gets.chomp will be used but not now, I need to test ARGV
+            input = gets.chomp  #gets.chomp will be used but not now, I need to test ARGV
 
             # exit the program if it matches key words.
             break if input == ":q" || input == "quit" || input == "exit"
@@ -18,9 +18,9 @@ class WB
                 WB.help
             when "c"
                 WB.c
-            when "go" || when "golang" # not sure if ruby supports this, I'll leave it
-                WB.golang              # in until I can properly test it,
-            when "sh" || when "shell"  # probably isn't supported.
+            when "go" 
+                WB.golang 
+            when "sh" 
                 WB.sh
             when "rust"
                 WB.rust
@@ -29,16 +29,15 @@ class WB
             end
         end
     end
-end
-
-def self.help
-    print "Help"
-    print ":h - This help menu."
-    print ":q - Quit the application."
-    print "go - Init golang project."
-    print "c" - "Init rust project."
-end
-
-def self.sh
-    FileUtils.mkdir_p 'test'
+    def self.help
+        puts "Help"
+        puts "':h' - This help menu."
+        puts "':q' - Quit the application."
+        puts "'go' - Init golang project."
+        puts "'c' - Init rust project."
+        puts "'sh' - Init a shell script. "
+    end
+    def self.sh
+        FileUtils.mkdir_p 'test'
+    end
 end
