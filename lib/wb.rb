@@ -1,6 +1,7 @@
 class WB
-    self.motd
+
     def self.run
+
         while true
             # get user input for what they want to init
             prompt = "> "
@@ -28,6 +29,9 @@ class WB
                 puts "\n Invalid command, type ':h' to see available commands."
             end
         end
+    end        
+    def self.motd
+        puts "Enter the name of the project below."
     end
     def self.help
         puts "        Help"
@@ -38,9 +42,16 @@ class WB
         puts "'sh'  - Init a shell script. "
     end
     def self.c
-        FileUtils.mkdir_p ''
-        FileUtils.mkdir_p '$/src'
-        File.open("Project1/src/main.c", "w") do |x|     
+        self.motd
+
+        # temporal scaffolding
+        prompt = "> "
+        print "#{prompt}"
+        projectName = gets.chomp.to_s
+
+        FileUtils.mkdir_p "#{projectName}"
+        FileUtils.mkdir_p "#{projectName}/src"
+        File.open("#{projectName}/src/main.c", "w") do |x|     
             x.write("#include <stdio.h>\n")
             x.write("#include <stdlib.h>\n")     
           end
