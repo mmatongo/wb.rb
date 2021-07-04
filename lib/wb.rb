@@ -10,7 +10,7 @@ class WB
 
       puts "\nType ':q' to quit and ':h' for help"
       print prompt.to_s
-      input = gets.chomp # gets.chomp will be used but not now, I need to test ARGV
+      input = gets.chomp
 
       # exit the program if it matches key words.
       break if [':q', 'quit', 'exit'].include?(input)
