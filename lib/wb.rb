@@ -10,7 +10,7 @@ class WB
 
       puts "\nType ':q' to quit and ':h' for help"
       print prompt.to_s
-      input = gets.chomp
+      input = $stdin.gets.chomp
 
       # exit the program if it matches key words.
       break if [':q', 'quit', 'exit'].include?(input)
@@ -56,9 +56,8 @@ class WB
     # temporal scaffolding
     prompt = '> '
     print prompt.to_s
-    project_name = gets.chomp.to_s
+    project_name = $stdin.gets.chomp.to_s
 
-    FileUtils.mkdir_p project_name.to_s
     FileUtils.mkdir_p "#{project_name}/src"
     File.open("#{project_name}/src/main.c", 'w') do |x|
       x.write("#include <stdio.h>\n")
