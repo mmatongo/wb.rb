@@ -64,5 +64,6 @@ class WB
       x.write("#include <stdlib.h>\n")
     end
     FileUtils.touch("#{project_name}/Makefile")
+    exit
   end
 end
