@@ -63,7 +63,28 @@ class WB
       x.write("#include <stdio.h>\n")
       x.write("#include <stdlib.h>\n")
     end
+
     FileUtils.touch("#{project_name}/Makefile")
+    fileutils.touch("#{project_name}/README.md")
+
+    `git init $PWD/#{project_name}`
+    exit
+  end
+
+  def self.golang
+    motd
+
+    prompt = '> '
+    print prompt.to_s
+    project_name = $stdin.gets.chomp.to_s
+
+    FileUtils.mkdir_p "#{project_name}/pkg"
+    FileUtils.mkdir_p "#{project_name}/vendor"
+    FileUtils.mkdir_p "#{project_name}/cmd"
+
+    FileUtils.touch("#{project_name}/README.md")
+
+    `git init $PWD/#{project_name}`
     exit
   end
 end
